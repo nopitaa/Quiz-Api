@@ -15,7 +15,7 @@ exports.submitOne = async (req, res) => {
                 id: req.body.quizId
             }
         });
-
+//cb
         if (req.body.answer == quiz.key) {
             res.status(200).json({
                 "message":"Jawaban anda benar"
@@ -23,7 +23,7 @@ exports.submitOne = async (req, res) => {
         }
         else {
             res.status(200).json({
-                "message": `jawaban yang benar adalah ${quiz.key}`
+                "message": `jawaban mu yang benar adalah  ${quiz.key}`
             })
         }
     }catch (e) {
@@ -41,6 +41,7 @@ exports.submitMany = async (req, res) => {
     try{
         let benar = 0
         let totalSoal = jobsheet.quizId.length
+        //ulg
         for (let i = 0; i < totalSoal ; i++) {
             const quiz = await Quiz.findOne({
                 limit:1,
