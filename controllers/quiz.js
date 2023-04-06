@@ -4,7 +4,6 @@ const Quiz = db.quizzes;
 
 //create: untuk menambahkan data kedalam tabel quiz
 exports.create = async (req, res) => {
-    //eh
     try{
         const data = await Quiz.create(req.body)
         res.json({
